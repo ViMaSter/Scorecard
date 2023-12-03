@@ -19,4 +19,4 @@ done
 
 dotnet tool install ScorecardGenerator --global
 rm -rf ../dist && mkdir ../dist
-ScorecardGenerator --azure-pat $AZURE_PAT --output-path ../dist
+ScorecardGenerator --azure-pat $AZURE_PAT --output-path ../dist --visualizer html
