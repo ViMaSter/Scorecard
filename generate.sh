@@ -9,7 +9,7 @@ while true; do
     break
   fi
 
-  repoURLs=$(echo $repos | jq -r '.[] | select(.name | startswith("p300-") | not) | select(.name | startswith("p400-") | not) | .clone_url')  
+  repoURLs=$(echo $repos | jq -r '.[] | select(.name | startswith("p300-") | not) | select(.name | startswith("p400-") | not) | select(.archived | not) | .clone_url')
   for repo in $repoURLs; do
     echo "Cloning $repo..."
     git clone $repo
